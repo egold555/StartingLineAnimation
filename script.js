@@ -357,28 +357,11 @@ function render() {
     var f = Math.abs(Math.cos(angle));
     var h = Math.pow(f, 1.5 + terrain.material.uniforms.roadWidth.value);
 
-
-
-
-
-    //console.log("t " + t)
-    //console.log("wRoad " + wRoad)
-    //console.log("wRoad2 " + wRoad2)
-    //    console.log("angleCenter " + angleCenter)
-    //    console.log("centerOff " + centerOff)
-    //    console.log("angle " + angle)
-    //    console.log("f " + f)
-    //    console.log("h " + h)
-
     //console.log(camera.position.y)
     camera.position.x = map(h, 70, 100, -1, 2);
     camera.rotation.z = -angle;
     camera.position.y = (angle * 5) + 20;
 
-    //camera.position.y = map(mouse.yDamped, 0, height, 4, 11);
-    //camera.rotation.z =  terrain.material.uniforms.distortCenter.value * 3;
-    //camera.position.x =  terrain.material.uniforms.distortCenter.value * 150;
-    //console.log(JSON.stringify(camera.position), + " " + JSON.stringify(camera.rotation))
     renderer.render(scene, camera);
     stats.end();
 
